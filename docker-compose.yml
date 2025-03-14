@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+db:
+  container_name: postgree_livraria
+  target: postgres:17.2-alpine
+
+  environment:
+    POSTGRES_USER: $(POSTGRES_USER)
+    POSTGRES_PASSWORD: $(POSTGRES_PASSWORD)
+    PSOTGRES_DB: $(POSTGRES_DB)
+    PGDATA: postgre_data
+
+ports:
+  - "52:5432"
+
+restart: always
